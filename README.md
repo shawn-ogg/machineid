@@ -6,6 +6,10 @@
 
 [![GoDoc](https://godoc.org/github.com/denisbrodbeck/machineid?status.svg)](https://godoc.org/github.com/denisbrodbeck/machineid) [![Go Report Card](https://goreportcard.com/badge/github.com/denisbrodbeck/machineid)](https://goreportcard.com/report/github.com/denisbrodbeck/machineid)
 
+## Fork
+
+[This](https://github.com/panta/machineid) is a fork of [github.com/denisbrodbeck/machineid](https://github.com/denisbrodbeck/machineid).
+
 ## Main Features
 
 * Cross-Platform (tested on Win7+, Debian 8+, Ubuntu 14.04+, OS X 10.6+, FreeBSD 11+)
@@ -18,13 +22,13 @@
 Get the library with
 
 ```bash
-go get github.com/denisbrodbeck/machineid
+go get github.com/panta/machineid
 ```
 
 You can also add the cli app directly to your `$GOPATH/bin` with
 
 ```bash
-go get github.com/denisbrodbeck/machineid/cmd/machineid
+go get github.com/panta/machineid/cmd/machineid
 ```
 
 ## Usage
@@ -35,7 +39,7 @@ package main
 import (
   "fmt"
   "log"
-  "github.com/denisbrodbeck/machineid"
+  "github.com/panta/machineid"
 )
 
 func main() {
@@ -55,7 +59,7 @@ package main
 import (
   "fmt"
   "log"
-  "github.com/denisbrodbeck/machineid"
+  "github.com/panta/machineid"
 )
 
 func main() {
@@ -113,7 +117,7 @@ import (
   "crypto/hmac"
   "crypto/sha256"
   "fmt"
-  "github.com/denisbrodbeck/machineid"
+  "github.com/panta/machineid"
 )
 
 const appKey = "WowSuchNiceApp"
