@@ -31,6 +31,21 @@ func readFile(filename string) ([]byte, error) {
 	return ioutil.ReadFile(filename)
 }
 
+// readFirstFile tries all the pathnames listed and returns the contents of the first readable file.
+func readFirstFile(pathnames []string) ([]byte, error) {
+	contents := []byte{}
+	var err error
+	for _, pathname := range pathnames {
+		if pathname != "" {
+			contents, err = readFile(pathname)
+			if err == nil {
+				return contents, nil
+			}
+		}
+	}
+	return contents, err
+}
+
 func trim(s string) string {
 	return strings.TrimSpace(strings.Trim(s, "\n"))
 }
