@@ -9,6 +9,7 @@
 ## Fork
 
 [This](https://github.com/panta/machineid) is a fork of [github.com/denisbrodbeck/machineid](https://github.com/denisbrodbeck/machineid).
+The fork solve some issues in the original library (docker support and customizable machine-id file, macOS cron support, ...).
 
 ## Main Features
 
@@ -88,7 +89,7 @@ All machine IDs are usually generated during system installation and stay consta
 The following sources are used:
 
 * **BSD** uses `/etc/hostid` and `smbios.system.uuid` as a fallback
-* **Linux** uses `/var/lib/dbus/machine-id` ([man](http://man7.org/linux/man-pages/man5/machine-id.5.html))
+* **Linux** uses `$MACHINE_ID_FILE` (if not empty), `/var/lib/dbus/machine-id`, `/etc/machine-id` ([man](http://man7.org/linux/man-pages/man5/machine-id.5.html))
 * **OS X** uses `IOPlatformUUID`
 * **Windows** uses the `MachineGuid` from `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography`
 
@@ -179,6 +180,7 @@ or
 
 ## Credits
 
+The [original library](github.com/denisbrodbeck/machineid) was created by [Denis Brodbeck](https://github.com/denisbrodbeck).
 The Go gopher was created by [Denis Brodbeck](https://github.com/denisbrodbeck) with [gopherize.me](https://gopherize.me/), based on original artwork from [Renee French](http://reneefrench.blogspot.com/).
 
 ## License
