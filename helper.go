@@ -31,6 +31,10 @@ func readFile(filename string) ([]byte, error) {
 	return ioutil.ReadFile(filename)
 }
 
+func writeFile(filename string, data []byte) error {
+	return ioutil.WriteFile(filename, data, 0644)
+}
+
 // readFirstFile tries all the pathnames listed and returns the contents of the first readable file.
 func readFirstFile(pathnames []string) ([]byte, error) {
 	contents := []byte{}
@@ -44,6 +48,20 @@ func readFirstFile(pathnames []string) ([]byte, error) {
 		}
 	}
 	return contents, err
+}
+
+// writeFirstFile writes to the first file that "works" between all pathnames listed.
+func writeFirstFile(pathnames []string, data []byte) error {
+	var err error
+	for _, pathname := range pathnames {
+		if pathname != "" {
+			err = writeFile(pathname, data)
+			if err == nil {
+				return nil
+			}
+		}
+	}
+	return err
 }
 
 func trim(s string) string {
