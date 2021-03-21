@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/panta/machineid"
+	"github.com/shawn-ogg/machineid"
 )
 
 func Example() {
